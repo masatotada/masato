@@ -1,0 +1,21 @@
+\documentclass[oneside,openany,fleqn]{jbook} %% ドキュメントクラス指定
+\usepackage{thesis}   %% 卒論用スタイルファイル
+\usepackage{mymacro}  %% マクロ定義ファイル
+\usepackage{bm}
+
+\begin{document}
+{\large
+\input{documents/titelpage}
+\pagenumbering{roman}  				%% ページ番号をローマ数字に
+\tableofcontents   					%% 目次
+\listoffigures     					%% 図目次
+\listoftables      					%% 表目次
+\clearpage    
+\pagenumbering{arabic}              %% ページ番号をアラビア数字に
+%\setcounter{page}{1}               %% ページ番号をリセット
+\input{documents/introduction}      %% 序論
+\input{documents/previous}	         %% 先行研究
+\input{documents/acknowledgement} %%謝辞
+\input{documents/bibliography}      %% 参考文献               
+}                              
+\end{document}

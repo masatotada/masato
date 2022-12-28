@@ -1,0 +1,50 @@
+%第X章の第をとるか?
+
+\usepackage{layout}  %%レイアウトを表示可能にする
+
+%%フォント類[T1エンコーディング]
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+%%以上で標準のエンコーディングがT1になる
+\usepackage{type1cm}  %%Computer Modern Type 1フォントの使用
+
+\usepackage{amsmath,amssymb}  %%数式を美しく
+
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage[xdvi,dvips]{graphicx}
+%\usepackage[xdvi]{graphicx}  %%%最低限これでよいのでは??
+
+%%表の細かい制御を可能にする(不要か?): cf)美文書p.134下から9行目
+\usepackage{array}
+
+\usepackage{cite}  %%参考文献の引用を容易にする
+
+\usepackage{grffile}  %%「.」（ピリオド）がファイル名に入っている図を読み込めるようにする
+
+\pagestyle{headings}  %%ノンブルと柱はページ上部
+
+%%ページレイアウト
+\setlength{\oddsidemargin}{36pt}
+\setlength{\topmargin}{4pt}
+\setlength{\headheight}{16pt}
+\setlength{\headsep}{32pt}
+\setlength{\textheight}{660pt}
+\setlength{\textwidth}{420pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\footskip}{24pt}
+\setlength{\hoffset}{0pt}
+\setlength{\voffset}{0pt}
+
+%%文字領域の上端から1行目のベースラインまでの距離
+\setlength{\topskip}{0pt}
+
+%%目次と見出し
+\setcounter{tocdepth}{2}           %%目次に出力する章の深さ
+\setcounter{secnumdepth}{3}        %%見出しをつける章の深さ
+\renewcommand{\bibname}{参考文献}  %%``関連図書''を``参考文献に''
+
+\renewcommand{\baselinestretch}{1.05}  %%行送り
+
+%%数式関連
+\setcounter{MaxMatrixCols}{15}  %%行列の最大列数(デフォルトは10)

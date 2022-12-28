@@ -1,0 +1,151 @@
+% !TEX root=../main.tex
+%何故か知らないが上の文を入れないとmain文と接続されない
+%%式(2.3)がうまく接続していない
+%%ベクトルを入れたい
+%%\left(\right)をうまく残して，式(2.4)を変える?
+
+
+\chapter{例文集}
+\label{chap:sample}
+
+\section{独り言}
+以降植田さん（末竹研究室）からもらった内容なので基本的にここから見ればいい．
+わからないことがあれば，ネットで検索するか，先輩らに聞くこと
+
+
+\section{科学技術文章の基本}
+
+\begin{itemize}
+ \item 句読点は，このように．
+ \item 基本的に全角文字を使う（英単語や数字，式(1)などは半角）
+ \item 和文中にスペースは入れない
+\end{itemize}
+\hspace{1zw}（誤）\underline{１９９７}年\underline
+{、}D.J.~Jobsonらはmultiscale retinex \underline{(}MS\underline{Ｒ}）を
+\underline{ }提案した\underline{。}\\
+\hspace{1zw}（正）1997年，D.J.~Jobsonらはmultiscale retinex（MSR）を提案した．
+
+
+\section{数式}
+
+\begin{itemize}
+ \item 本文のxと数式モードの$x$は違う
+ \item 別行立ての場合：
+       \begin{align}
+	&\mathrm{ RMSE }
+	=
+	\sqrt{ \mathrm{ MSE } }\,,  %%\,はスペース
+	\label{eq:RMSE}
+	\\
+	&\mathrm{ MSE }
+	=
+	\frac{ 1 }{ N } \sum_{ i = 0 }^N ( f'_i - f_i )^2
+  	\label{eq:MSE}
+       \end{align}
+        や
+        \begin{align}
+	\tilde{ \phi }( x )
+	=
+	\begin{cases}
+	 \exp( - x / 2 ) & x \GEQQ 1  %%\GEQQはmymacro.styで定義 
+     \\
+	 x \times | x | & \mathrm{ otherwise }
+	\end{cases}.
+        \end{align}
+ \item 式番号を抑制する場合：
+       \begin{align}
+	2 x^2 + 4 x + 2
+	&=
+	2 \!\left( x^2 + 2 x + 1 \right)
+	\nonumber \\
+	&=
+	2 ( x + 1 )^2.
+       \end{align}
+ \item 2種類の行列：
+       \begin{align}
+	A
+	=
+	\begin{pmatrix}
+	 a_{ 11 } & a_{ 12 } & \ldots & a_{ 1n } \\
+	 a_{ 21 } & a_{ 22 } & \ldots & a_{ 2n } \\
+	 \vdots   & \vdots   & \ddots & \vdots   \\
+	 a_{ m1 } & a_{ m2 } & \ldots & a_{ mn }
+	\end{pmatrix},\
+	B
+	=
+	\left(
+	\begin{array}{@{\,}c|ccc@{\,}}
+	 b_{ 11 } & 0        & \ldots & 0        \\ \hline
+	 0        & b_{ 22 } & \ldots & b_{ 2n } \\
+	 \vdots   & \vdots   & \ddots & \vdots   \\
+	 0        & b_{ m2 } & \ldots & b_{ mn }
+	\end{array}
+	\right).
+       \end{align}
+\end{itemize}
+
+
+\section{図表}
+
+\begin{itemize}
+ \item 図表はページの上か下に配置する（配置のオプションには\verb|[tb]|を使う）
+ \item \verb|\caption[|$\alpha$\verb|]|\verb|{|$\beta$\verb|}|の$\alpha$
+は図（表）目次，$\beta$は図（表）の部分に出力される
+\end{itemize}
+
+
+\subsection{図}
+
+図のキャプションは下につける．
+
+\begin{figure}[tb]
+ \centering
+ \begin{tabular}{cc}
+  \includegraphics[width=37mm]{figures/impression_ori.eps} &
+  \includegraphics[width=37mm]{figures/impression_Y.eps} \vspace{-1mm} \\
+  (a) & (b) \vspace{2mm} \\
+  \includegraphics[width=37mm]{figures/impression_color2gray.eps} &
+  \includegraphics[width=37mm]{figures/impression_prop.eps} \vspace{-1mm} \\
+  (c) & (d)
+ \end{tabular}
+ \vspace{-1mm}
+ \caption[Impressionに対する実験結果]{C. MonetのImpression 
+(a)原画像，(b)明度成分，(c) Color2Gray，(d)提案手法}
+ \label{fig:impression}
+\end{figure}
+
+
+\subsection{表}
+
+表のキャプションは上につける．
+
+\begin{table}[tb]
+ \centering
+ \caption[提案手法の計算時間]{提案手法の計算時間}
+ \label{table:time}
+ \vspace{2mm}
+ \begin{tabular}{c|c}
+  \hline
+  画像サイズ & 計算時間$t$ sec \\
+  \hline
+  $100\!\times\!100$ & 0.17 \\ \hline
+  $150\!\times\!150$ & 0.39 \\ \hline
+  $200\!\times\!200$ & 0.69 \\
+  \hline
+ \end{tabular}
+\end{table}
+
+
+\section{相互参照}
+
+\begin{itemize}
+ \item 式・図・表の\verb|\label|の位置に注意（特に\verb|\caption|との順序関係）
+ \item \verb|\label|の参照：式(\ref{eq:RMSE})または式\eqref{eq:MSE}，図\ref
+{fig:impression}(a)，表\ref{table:time}
+ \item 参考文献：F. Vi\'{e}notらの色覚モデル\cite{Vienot}を用いて実験を行った．
+       ～の方法は，文献\cite{Tanaka07,Handbook}を参照されたい．
+       ～の研究がなされてきている\cite{Gooch,Tanaka06,Tanaka08}．
+\end{itemize}
+
+
+%%版組上の注意を入れるか?

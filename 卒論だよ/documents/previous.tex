@@ -1,0 +1,50 @@
+% !TEX root=../main.tex
+%何故か知らないが上の文を入れないとmain文と接続されない
+%%式(2.3)がうまく接続していない
+%%ベクトルを入れたい
+%%\left(\right)をうまく残して，式(2.4)を変える?
+
+
+
+\chapter{関連研究}
+\label{chap:sample}
+
+\section{VGG16}
+VGGNet\cite{VGG16}は畳み込みネットワーク(CNN)の層の深さが大規模な画像認識においての精度に影響を与えるとして提案されたモデルである．3×3の小さな畳み込みフィルタを使用することで，従来のCNNモデルよりもモデルの層の深さを増加させていることが特徴である．VGGNetには11層から19層のモデルがあり，(図)に16層のモデルであるVGG16の構造を示す．VGG16は13層の3×3畳み込み層とそのあとに続く3層の全結合層(fc層)からなるモデルである．(図)はVGG16の各層における処理を表しており，「3×3 conv，64」は「3×3の畳み込み演算を行い，チャンネル数を64にする」ということで，「Pooling 1/2」は「プーリング層で特徴マップのサイズを1/2にする」ということをそれぞれ表している．\\
+　VGGNetの手法は画像認識コンテストであるImageNet Challenge2014において上位の成績を残している．
+\section{ResNet}
+ResNet\cite{ResNet}は2015年に提案されたモデルである．VGGNetでは畳み込みネットワークの層を従来のモデルよりも深くすることでより精度を向上させることに成功していた．しかし層を深くしすぎると勾配が損失し，劣化問題が起こることでうまく学習が行われないという問題があった．この問題を解決するモデルとして提案されたのがResNetである．ResNetの大きな特徴として残差ブロック(Residual Block)が挙げられる．(図)に従来のモデルの構造とResNetの残差ブロックを示す．(図)よりResNetの残差ブロックは入力データ($\bm{x}$)を2層の畳み込み層の出力後($f(\bm{x})$)に足し合わせる残差接続を行う．これにより，初期値の特徴や勾配をより深い層まだ伝搬させることが可能になるため，モデルの層を深くしても劣化問題の起きにくく，精度の高いモデルの実現に成功しており，最大152層のモデルが提案された．\\
+　(図)にResNetの提案されたモデルの一つであるResNet18の構造を示す．
+
+\section{畳み込み層}
+\subsection{Pointwise convolution}
+\subsection{Depthwise convolution}
+
+\section{Attentionブロック}
+\subsection{Spatial Attention}
+\subsection{Channel Attention}
+
+\section{Transformer}
+
+\section{BoTNet}
+\subsection{全体構造}
+\subsection{MHSA(Multi-head Self Attention)}
+
+\chapter{提案手法}
+\section{全体構造}
+\section{Channel Attentionを用いたTransformer}
+\section{depthwise convolusionを用いたFeed Forward Network}
+\chapter{実験}
+\section{実験準備}
+\subsection{データセット}
+\subsection{画像の実験前処理}
+
+\section{評価方法}
+
+\section{実験内容}
+
+\section{実験結果}
+
+\chapter{結論}
+
+%%版組上の注意を入れるか?
